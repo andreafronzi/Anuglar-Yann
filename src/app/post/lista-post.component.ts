@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, inject, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, OnInit, signal} from '@angular/core';
 import {PostService} from '../services/post.service';
 import {NgForOf} from '@angular/common';
 import {MatCard, MatCardContent, MatCardFooter, MatCardHeader, MatCardTitle} from '@angular/material/card';
@@ -16,7 +16,8 @@ import {Router} from '@angular/router';
 export class ListaPostComponent implements OnInit {
 
 
-  data: any = [];
+  data = signal<any[]>([]);
+
   postsService = inject(PostService);
   router = inject(Router);
 
@@ -25,7 +26,8 @@ export class ListaPostComponent implements OnInit {
     this.postsService.getPosts().subscribe({
       next: (data) => {
         console.log('Dati ricevuti:', data);
-        this.data = data;
+        this.data.set(data);
+
       }, error: (error) => {
         console.error('Errore durante il recupero dei post:', error);
       }, complete: () => {
