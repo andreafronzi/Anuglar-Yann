@@ -1,0 +1,11 @@
+ <mat-card *ngFor="let post of data" class="example-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>{{ post.title.toUpperCase() }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{post.body}}</p>
+  </mat-card-content>
+  <mat-card-footer class="example-card-footer">
+    <app-button-prova [isDisabled]="false" (click)="goToDetail(post.id)"></app-button-prova>
+  </mat-card-footer>
+</mat-card>

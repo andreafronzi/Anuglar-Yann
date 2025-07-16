@@ -3,39 +3,32 @@ import {
   AfterContentInit,
   AfterViewChecked,
   AfterViewInit,
-  Component,
   ChangeDetectionStrategy,
-  DoCheck, OnChanges, OnDestroy,
-  OnInit, SimpleChanges
+  Component,
+  DoCheck,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges
 } from '@angular/core';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatCardModule} from '@angular/material/card';
-import {MatChipsModule} from '@angular/material/chips';
-
-
+import {MatCard, MatCardContent, MatCardFooter, MatCardHeader, MatCardTitle} from '@angular/material/card';
+import {MatChip, MatChipSet} from '@angular/material/chips';
 
 
 @Component({
   selector: 'app-prova',
-  imports: [
-    MatCardModule, MatProgressBarModule,MatChipsModule,
-  ],
+  imports: [MatCard, MatCardHeader, MatCardTitle, MatCardContent, MatCardFooter, MatChipSet, MatChip],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './prova.component.html',
   styleUrl: './prova.component.css'
 })
-export class ProvaComponent implements OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit,
-AfterViewChecked,OnDestroy,OnChanges{
+export class ProvaComponent implements OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, OnChanges {
 
-  dogs = [
-    {
-      nome: 'roger',
-      razza: 'bassotto',
-      descrizione: `The Chihuahua is a Mexican breed of toy dog. It is named for the
+  dogs = [{
+    nome: 'roger', razza: 'bassotto', descrizione: `The Chihuahua is a Mexican breed of toy dog. It is named for the
   Mexican state of Chihuahua and is among the smallest of all dog breeds. It is
   usually kept as a companion animal or for showing.`
-    }
-  ]
+  }]
 
   longText = `The Chihuahua is a Mexican breed of toy dog. It is named for the
   Mexican state of Chihuahua and is among the smallest of all dog breeds. It is
@@ -47,8 +40,8 @@ AfterViewChecked,OnDestroy,OnChanges{
 
 
   ngOnInit(): void {
-        console.log("OnInit")
-    }
+    console.log("OnInit")
+  }
 
   ngAfterContentChecked(): void {
     console.log("AfterContentChecked")

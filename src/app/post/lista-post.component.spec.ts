@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProvaComponent } from './prova.component';
+import { ListaPostComponent } from './lista-post.component';
 
 describe('DetailPostComponent', () => {
-  let component: ProvaComponent;
-  let fixture: ComponentFixture<ProvaComponent>;
+  let component: ListaPostComponent;
+  let fixture: ComponentFixture<ListaPostComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProvaComponent]
+      imports: [ListaPostComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ProvaComponent);
+    fixture = TestBed.createComponent(ListaPostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

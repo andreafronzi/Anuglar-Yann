@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProvaComponent } from './prova.component';
+import { DetailPostComponent } from './detail-post.component';
 
 describe('DetailPostComponent', () => {
-  let component: ProvaComponent;
-  let fixture: ComponentFixture<ProvaComponent>;
+  let component: DetailPostComponent;
+  let fixture: ComponentFixture<DetailPostComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProvaComponent]
+      imports: [DetailPostComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ProvaComponent);
+    fixture = TestBed.createComponent(DetailPostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
